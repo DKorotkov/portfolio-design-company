@@ -1,0 +1,29 @@
+@use "__config" as *;
+
+.rectangles {
+
+}
+
+[class|="rectangle"] {
+   border-radius: rem(12);
+   width: rem(60);
+   aspect-ratio: 1;
+   @include media (">phone") { 
+     width: rem(130);
+   }
+}
+
+.rectangle {
+   &--gr {
+      background-color: var(--clr-bg-gr);
+   }
+   &--bl {
+      background-color: var(--clr-bg-bl);
+   }
+   &--br {
+      background-color: var(--clr-bg-br);
+   }
+   &--gn {
+      background-color: var(--clr-bg-gn-400);
+   }
+}

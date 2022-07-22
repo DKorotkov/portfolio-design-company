@@ -1,0 +1,16 @@
+@use "__config" as *;
+.section {
+   padding: rem(50) 0;
+   @include media (">phone") { 
+     padding: rem(100) 0;
+   }
+
+   &__header {
+      font-size: var(--fs-50);
+      font-weight: var(--fw-600);
+   }
+
+   &--gl {
+      background-color: var(--clr-bg-gn-300);
+   }
+}

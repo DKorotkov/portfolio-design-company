@@ -60,6 +60,12 @@
    --clr-bg-gray: #f0f0f0;
    --clr-bg-gray-400: rgb(78 78 78 / 1);
    --clr-bg-gray-600: rgb(78 78 78 / 0.6);
+   --clr-bg-gn-400: rgba(216, 232, 231, 0.65);
+   --clr-bg-gn-300: rgba(246, 255, 254, 1);
+   --clr-bg-br: rgba(244, 213, 184, 0.65);
+   --clr-bg-bl: rgba(216, 230, 247, 1);
+   --clr-bg-gr: rgba(234, 235, 239, 1);
+
    
    --clr-white: #fff;
    --clr-black: #000;
@@ -94,6 +100,9 @@
    --fs-20: 1.25rem;
    --fs-22: 1.375rem;
    --fs-40: 2.5rem;
+   --fs-50: 3.125rem;
+   --fs-55: 3.4375rem;
+   --fs-58: 3.625rem;
    
    --ff-body: var(--ff-main);
    --ff-logo: var(--ff-main);

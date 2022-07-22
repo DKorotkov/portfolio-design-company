@@ -1,0 +1,123 @@
+@use "__config" as *;
+
+.solutions {
+   position: relative;
+
+		&__rectangles {
+         display: flex;
+         position: absolute;
+         top: 0;
+         right: 0;
+		}
+
+		&__rectangle {
+         position: relative;
+		}
+
+      &__rectangle:nth-child(1) {
+         top: calc(-1 * rem(20));
+         @include media (">phone") { 
+           top: calc(-1 * rem(20));
+         }
+      }
+
+      &__rectangle:nth-child(2) {
+         top: rem(10);
+         left: calc(-1 * rem(25));
+         @include media (">phone") { 
+           top: rem(20);
+            // left: calc(-1 * rem(25));
+         }
+      }
+
+      &__rectangle:nth-child(3) {
+         top: calc(-1 * rem(30));
+         left: calc(-1 * rem(50));
+         @include media (">phone") { 
+           top: calc(-1 * rem(60));
+            left: calc(-1 * rem(110));
+         }
+
+      }
+
+      &__conatiner {
+         @include media (">phone") { 
+           display: flex;
+           gap: rem(30);
+         }
+      }
+
+		&__info {
+         flex-basis: 50%;
+		}
+
+      &__info-text {
+         padding-top: rem(20);
+         padding-bottom: em(50,20);
+      }
+
+		&__digits-wrapper {
+           display: flex;
+
+         @include media (">phone") { 
+          justify-content: space-between;
+         }
+		}
+
+      &__digits-info {
+         display: grid;
+         position: relative;
+         gap: rem(20);
+         flex-grow: 1;
+         justify-content: center;
+         padding: 0 rem(20);
+         @include media ("<=phone") { 
+           padding: rem(20);
+         }
+      }
+      
+      &__digits-info:not(:last-of-type)::after {
+         display: block;;
+         position: absolute;
+         top: 50%;
+         right: 0;
+         content: '';
+         width: rem(1);
+         height: 80%;
+         background-color: rgba(167, 177, 169, 1);
+         transform: translateY(-50%);
+        
+      }
+
+		&__digits {
+         font-size: var(--fs-55);
+         font-weight: var(--fw-600);
+         color: var(--clr-primary);
+         text-align: center;
+		}
+
+		&__digits-text {
+         color: rgba(109, 119, 108, 1);
+         @include media ("<=phone") { 
+         text-align: center;
+         }
+		}
+
+		&__imgs {
+         display: flex;
+         gap: rem(30);
+         @include media ("<=phone") { 
+          padding-top: rem(30);
+         }
+		}
+
+      &__img {
+         min-width: rem(200);
+         border-radius: rem(20);
+      }
+
+      &__img:first-of-type {
+         height: 80%;
+         align-self: flex-end;
+      }
+}

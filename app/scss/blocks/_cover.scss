@@ -17,18 +17,31 @@
    
 
 		&__aside {
+         position: absolute;
+         top: 50%;
+         left: 0;
+         transform: translateY(-50%);
          @include media ("<=phone") { 
            padding: rem(20) 0;
          }
          @include media (">phone") { 
          //   align-self: center;
-            max-width: rem(250);
-           justify-self: flex-start;
+            // max-width: rem(250);
+            padding-left: min(30%, rem(130));
          }
 		}
 
+      &__conatiner {
+         display: flex;
+         justify-content: flex-end;
+      }
+
       &__socials-list {
          display: flex;
+         @include media ("<=phone") { 
+         justify-content: space-evenly;
+         }  
+
         @include media (">phone") { 
             display: grid;
             gap: rem(40);
