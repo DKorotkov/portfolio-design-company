@@ -1,4 +1,4 @@
-@use "config" as *;
+@use "__config" as *;
 @use "sass:map";
 
 // --------------------------------------ОБНУЛЕНИE И ОБЩИЕ ПАРАМЕТРЫ--------------------------------------
@@ -12,28 +12,25 @@
 html,
 body {
    width: 100%;
+   min-width: var(--minWidth);
+
 }
 
 body {
    // font-family: system-ui, system, sans-serif;
-   font-family: var(--font-main);
+   font-family: var(--ff-main);
    background-size: cover;
 }
 
-// ____Класс для объявления шрифты после его загрузки_____
-.fonts-loaded body:root {
-    
-      --font-main: "Pangolin", serif;
-   
-}
 
 *::selection { // Цвет выделения текста
-   background-color: var(--color-primary);
-   color: var(--color-bg-main);
+   background-color: var(--clr-primary);
+   color: var(--clr-bg-main);
 }
 
 img,
-picture {
+picture,
+svg {
    width: 100%;
    max-width: 100%;
    height: inherit;
@@ -96,12 +93,12 @@ picture {
    display: none;
    &__mobile {
       @include media('<=phone') {
-         display: none;
+         display: none!important;
       }
    }
    &__desktop {
       @include media('>phone') {
-         display: none;
+         display: none!important;
       }
    }
 }

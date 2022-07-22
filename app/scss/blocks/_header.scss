@@ -1,0 +1,54 @@
+@use "__config" as *;
+
+
+.header {
+   --icon-size: 36px;
+
+   position: absolute;
+   right: 0;
+   left: 0;
+
+   background-color: var(--clr-bg-gray-600);
+   z-index: 10;
+
+   @include media (">phone") {
+      
+      overflow: hidden;
+      &__add-btns {
+         display: flex;
+         gap: rem(23);
+      }
+   }
+   
+
+   &__container {
+      display: flex;
+      align-items: center;
+      height: var(--sz-navigation);
+
+      justify-content: space-between;
+   }
+
+   &__btn {
+      
+      display: flex;
+      height: var(--icon-size);
+      width: var(--icon-size);
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      align-items: center;
+      justify-content: center;
+      fill: var(--clr-white);
+   }
+
+   &__logo {
+      color: var(--clr-primary);
+      font-family: var(--ff-heading);
+      font-size: var(--fs-logo);
+      font-weight: var(--fw-logo);
+      text-decoration: none;
+   }
+}

@@ -174,9 +174,9 @@ class GalleryDK extends NodaDK {
          if (!this._$el.classList.contains("gallery-dk--active")) this.open();
          this.setImg(id);
          this._$galleryMainImg.style.opacity = 0;
-      } else if (e.target.dataset.next) this.nextImg();
-      else if (e.target.dataset.prev) this.prevImg();
-      else if (e.target.dataset.zoom) this._zoomImg();
+      } else if (e.target.closest('[data-next="true"]') || e.target.dataset.next) this.nextImg();
+      else if (e.target.closest('[data-prev="true"]') || e.target.dataset.prev) this.prevImg();
+      else if (e.target.closest('[data-zoom="true"]') || e.target.dataset.zoom) this._zoomImg();
    }
 
    open() {

@@ -1,0 +1,12 @@
+@use "__config" as *;
+
+.socials-icons {
+   --icon-size: 1em;
+   fill: var(--clr-white);
+   width: var(--icon-size);
+   height: var(--icon-size);
+
+   &:hover {
+      fill: var(--clr-primary);
+   }
+}

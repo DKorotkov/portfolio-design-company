@@ -89,7 +89,7 @@ class NodaDK {
 
    _mainElClick(e) {
       // Если по кнопке закрытия
-      if (e.target.dataset.close) {
+      if (e.target.closest('[data-close="true"]') || e.target.dataset.close) {
          this.close();
       }
    }

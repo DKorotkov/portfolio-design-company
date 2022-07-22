@@ -1,0 +1,74 @@
+@use "__config" as *;
+
+.nav-main {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: -100%;
+   opacity: 0;
+   transition: all .3s ease;
+
+   @include media (">phone") { 
+     display: block;
+     position: static;
+     opacity: 1;
+   }
+
+   &--active {
+      left: 0;
+      opacity: 1;
+   }
+
+   &__wrapper {
+      @include media ("<=phone") { 
+        --padding: 1.25rem;
+         display: grid;
+         position: relative;
+         background-color: var(--clr-white);
+         height: 100%;
+         align-content: space-between;
+         padding: var(--padding);
+         background-color: var(--clr-bg-gray-400);
+         width: min(80vw, rem(300)); 
+      }
+   }
+
+   &__box {
+        display: flex;
+
+      @include media ("<=phone") { 
+         flex-direction: column;
+         gap: rem(15);
+         padding: rem(10) 0;
+      }
+
+      @include media (">phone") { 
+        flex-wrap: wrap;
+        row-gap: rem(5);
+      }
+   }
+
+   &__item {
+      display: block;
+      color: var(--clr-white);
+      text-decoration: none;
+      font-size: var(--fs-nav);
+      // font-weight: var(--fw-bold);
+      font-family: var(--ff-secondary);
+      @include media (">phone") { 
+        padding: 0 rem(20);
+      }
+   }
+
+   &__item:hover {
+      color: var(--clr-primary);
+   }
+
+   &__search {
+      display: flex;
+      color: var(--clr-white);
+      align-items: center;
+      gap: rem(15);
+
+   }
+}

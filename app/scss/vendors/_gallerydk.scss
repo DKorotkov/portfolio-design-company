@@ -1,4 +1,4 @@
-@use "config" as *;
+@use "__config" as *;
 
 .gallery-dk {
    --animation-time: 300ms; // Установить аналогичную в js 

@@ -1,0 +1,75 @@
+@use "__config" as *;
+
+.cover {
+
+   background-image: url("/img/luxury-modern-dark-living-room-interior 1.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   min-height: 100vh;
+   align-items: center;
+   padding-top: calc(var(--sz-navigation) + rem(20));
+   padding-bottom: rem(20);
+
+   @include media ("<=phone") { 
+      grid-auto-flow: row;
+   }
+   
+
+		&__aside {
+         @include media ("<=phone") { 
+           padding: rem(20) 0;
+         }
+         @include media (">phone") { 
+         //   align-self: center;
+            max-width: rem(250);
+           justify-self: flex-start;
+         }
+		}
+
+      &__socials-list {
+         display: flex;
+        @include media (">phone") { 
+            display: grid;
+            gap: rem(40);
+        }
+      }
+
+		&__slogan {
+         position: relative;
+         color: var(--clr-white);
+         background-color: var(--clr-bg-gray-600);
+         padding: rem(60) rem(50);
+         border-radius: var(--border-radius);
+         max-width: rem(570);
+        
+		}
+      
+      &__slogan::before {
+         @include media (">phone") { 
+           display: block;
+            position: absolute;
+            top: calc(-1 * rem(35));
+            left: calc(-1 * rem(84));
+            content: '';
+            width: rem(125);
+            height: rem(100);
+            background-image: url('/img/wave.svg');
+            background-repeat: repeat space;
+            background-size: rem(42) rem(21);
+         }
+      }
+
+		&__slogan-header {
+         font-weight: var(--fw-extra-bold);
+         font-size: var(--fs-700);
+         font-family: var(--ff-heading);
+         
+		}
+
+		&__slogan-text {
+         padding-top: rem(20);
+         padding-bottom: rem(60);
+         font-size: var(--fs-450);
+		}
+}

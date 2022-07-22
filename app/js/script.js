@@ -38,23 +38,21 @@
 
    // -----------Модальное окно-----------------------------
    m = new ModalDK({
-      selector: "#modal",
-      openBtnsSelector: ['[data-name="modal"]'],
+      selector: ".nav-main",
+      openBtnsSelector: ['[data-name="navigation"]'],
       focusTrap: true, // Требуется ли перемещаться табом только внутри объекта (default: false)
       collapseOnFocusOut: false, // Требуется ли закрывать при потери фокуса
       activeClass: "--active",
-      onClose() {
-         console.log("modal closing");
-      },
+     
    });
    // ------------------------------------------------------
 
    // -----------Галерея------------------------------------
-   g = new GalleryDK({
-   selector: ".gallery", // селектор контейнера, который объединяет все изображения
-   focusTrap: true,
-   collapseOnFocusOut: false,
-});
+//    g = new GalleryDK({
+//    selector: ".gallery", // селектор контейнера, который объединяет все изображения
+//    focusTrap: true,
+//    collapseOnFocusOut: false,
+// });
 
    // ------------------------------------------------------
 
