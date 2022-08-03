@@ -7,9 +7,8 @@
    background-size: cover;
 
    min-height: 100vh;
-   align-items: center;
-   padding-top: calc(var(--sz-navigation) + rem(20));
-   padding-bottom: rem(20);
+   
+   
 
    @include media ("<=phone") { 
       grid-auto-flow: row;
@@ -17,32 +16,46 @@
    
 
 		&__aside {
-         position: absolute;
-         top: 50%;
+         
+         
+         padding: rem(20) 0;
+         padding-top: calc(var(--sz-navigation) + rem(20));
+
+      
+         @include media (">laptop") {
+            position: absolute;
+            top: 50%; 
+         bottom: auto;
          left: 0;
-         transform: translateY(-50%);
-         @include media ("<=phone") { 
-           padding: rem(20) 0;
-         }
-         @include media (">phone") { 
          //   align-self: center;
             // max-width: rem(250);
             padding-left: min(30%, rem(130));
+         transform: translateY(-50%);
+         padding-top: 0;
          }
 		}
 
       &__conatiner {
          display: flex;
-         justify-content: flex-end;
+         justify-content: center;
+         min-height: 100vh;
+         padding-bottom: rem(40);
+         align-items: flex-start;
+         @include media (">laptop") { 
+         padding-top: calc(var(--sz-navigation) + rem(20));
+
+            align-items: center;
+            justify-content: flex-end;
+         }
+
       }
 
       &__socials-list {
          display: flex;
-         @include media ("<=phone") { 
-         justify-content: space-evenly;
-         }  
+            justify-content: space-evenly;
 
-        @include media (">phone") { 
+
+        @include media (">laptop") { 
             display: grid;
             gap: rem(40);
         }
@@ -55,11 +68,10 @@
          padding: rem(60) rem(50);
          border-radius: var(--border-radius);
          max-width: rem(570);
-        
 		}
       
       &__slogan::before {
-         @include media (">phone") { 
+         @include media (">laptop") { 
            display: block;
             position: absolute;
             top: calc(-1 * rem(35));
@@ -67,7 +79,7 @@
             content: '';
             width: rem(125);
             height: rem(100);
-            background-image: url('/img/wave.svg');
+            background-image: url('/files/svg_icons/wave.svg');
             background-repeat: repeat space;
             background-size: rem(42) rem(21);
          }

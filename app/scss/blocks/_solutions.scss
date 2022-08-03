@@ -41,7 +41,7 @@
       }
 
       &__conatiner {
-         @include media (">phone") { 
+         @include media (">laptop") { 
            display: flex;
            gap: rem(30);
          }
@@ -57,10 +57,12 @@
       }
 
 		&__digits-wrapper {
-           display: flex;
-
+         display: flex;
+         flex-direction: column;
+          
          @include media (">phone") { 
-          justify-content: space-between;
+            justify-content: space-between;
+            flex-direction: row;
          }
 		}
 
@@ -79,14 +81,23 @@
       &__digits-info:not(:last-of-type)::after {
          display: block;;
          position: absolute;
-         top: 50%;
-         right: 0;
+         bottom: 0;
+         left: 50%;
          content: '';
-         width: rem(1);
-         height: 80%;
+         width: 60%;
+         height: rem(1);
          background-color: rgba(167, 177, 169, 1);
-         transform: translateY(-50%);
-        
+         transform: translateX(-50%);
+
+
+         @include media (">phone") {
+            top: 50%;
+            right: 0;
+            left: auto;
+            width: rem(1);
+            height: 80%;
+            transform: translateY(-50%);
+         }
       }
 
 		&__digits {
@@ -104,11 +115,14 @@
 		}
 
 		&__imgs {
-         display: flex;
-         gap: rem(30);
-         @include media ("<=phone") { 
           padding-top: rem(30);
+         
+         @include media (">phone") { 
+            display: flex;
+         gap: rem(30);
          }
+         
+         
 		}
 
       &__img {
