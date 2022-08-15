@@ -1,19 +1,31 @@
 @use "__config" as *;
 
 .rectangles {
+   display: flex;
+   position: absolute;
+   top: 0;
+   z-index: 1;
+  
+   &--right {
+       right: 0;
+   }
 
-}
-
-[class|="rectangle"] {
-   border-radius: rem(12);
-   width: rem(60);
-   aspect-ratio: 1;
-   @include media (">phone") { 
-     width: rem(130);
+   &--left {
+       left: min(rem(100), 10%);
    }
 }
 
+
 .rectangle {
+   position: relative;
+   border-radius: rem(12);
+   width: rem(60);
+   aspect-ratio: 1;
+   
+   @include media (">phone") { 
+     width: rem(130);
+   }
+
    &--gr {
       background-color: var(--clr-bg-gr);
    }
@@ -27,3 +39,34 @@
       background-color: var(--clr-bg-gn-400);
    }
 }
+
+.rectangles[data-type="first"] {
+   & .rectangle:nth-child(1) {
+      top: calc(-1 * rem(20));
+      @include media (">phone") { 
+         top: calc(-1 * rem(20));
+      }
+   }
+
+   & .rectangle:nth-child(2) {
+      top: rem(10);
+      left: calc(-1 * rem(25));
+      @include media (">phone") { 
+         top: rem(20);
+         // left: calc(-1 * rem(25));
+      }
+   }
+
+   & .rectangle:nth-child(3) {
+      top: calc(-1 * rem(30));
+      left: calc(-1 * rem(50));
+      @include media (">phone") { 
+         top: calc(-1 * rem(60));
+         left: calc(-1 * rem(110));
+      }
+   }
+
+}
+
+
+ 

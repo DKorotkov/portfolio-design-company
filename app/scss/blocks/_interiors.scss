@@ -1,0 +1,41 @@
+@use "__config" as *;
+
+.interiors {
+   position: relative;
+
+   &__container {
+      position: relative;
+   }
+
+   &__img {
+      border-radius: rem(20);
+      @include media (">laptop") { 
+         width: 60%;
+      }
+   }
+
+   &__info {
+      position: relative;
+      top: -10vh;
+      max-width: rem(670);
+      background-color: var(--clr-bg-gray-300);
+      border-radius: var(--border-radius);
+      padding: rem(50);
+      width: 90%;
+      margin-inline: auto;
+
+      @include media (">laptop") { 
+         position: absolute;
+         top: 50%;
+         // left: -20vw;
+         right: 5%;
+         width: 100%;
+         transform: translateY(-50%);
+      }
+   }
+
+   &__info-text {
+      padding-top: rem(20);
+      color: var(--clr-text-gn-400);
+   }
+}

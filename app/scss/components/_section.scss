@@ -1,6 +1,8 @@
 @use "__config" as *;
 .section {
    padding: rem(50) 0;
+   background-color: var(--clr-bg-milk);
+   
    @include media (">phone") { 
      padding: rem(100) 0;
    }
@@ -10,7 +12,7 @@
       font-weight: var(--fw-600);
    }
 
-   &--gl {
+   &--gn {
       background-color: var(--clr-bg-gn-300);
    }
 }

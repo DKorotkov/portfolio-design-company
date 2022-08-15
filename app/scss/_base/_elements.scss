@@ -126,8 +126,11 @@ svg {
    transform: translateY(-120%);
    transition: transform 300ms ease-in;
 
-   background-color: #fff;
-   padding: rem(5) rem(10);
+   background-color: var(--clr-primary);
+   color: var(--clr-white);
+   z-index: 11;
+   padding: rem(10) rem(15);
+   border-radius: 0 0 rem(5) rem(5);
 
    &:focus {
       transform: translateY(0);
@@ -152,13 +155,15 @@ svg {
 }
 
 .grid- {
-   &even-columns {
+   &auto-columns {
       grid-template-columns: repeat(auto-fit, minmax(min(rem(160), 100%), 1fr));
    }
 
-   &auto-columns {
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
+   &even-columns {
+      @include media (">tablet") { 
+        grid-auto-flow: column;
+         grid-auto-columns: 1fr;
+      }
    }
 }
 // ____________________________________________________
