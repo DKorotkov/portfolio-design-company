@@ -60,7 +60,8 @@
       }
    }
 
-   &__item:hover {
+   &__item:hover,
+   &__item:focus-visible {
       color: var(--clr-primary);
    }
 

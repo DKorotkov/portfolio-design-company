@@ -43,7 +43,7 @@
       focusTrap: true, // Требуется ли перемещаться табом только внутри объекта (default: false)
       collapseOnFocusOut: false, // Требуется ли закрывать при потери фокуса
       activeClass: "--active",
-     
+      matchMedia: "(max-width: 520px)",
    });
    // ------------------------------------------------------
 

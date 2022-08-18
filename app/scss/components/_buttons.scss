@@ -41,3 +41,20 @@
    padding: rem(20) rem(25);
    border-radius: rem(15);
 }
+
+
+.btn-arrow {
+   position: relative;
+}
+.btn-arrow::before {
+   display: block;
+   position: absolute;
+   top: 40%;
+   left: 38%;
+   content: '';
+   width: rem(10);
+   aspect-ratio: 1;
+   border-top: rem(2) solid #fff;
+   border-right: rem(2) solid #fff;
+   transform: rotate(45deg);
+}

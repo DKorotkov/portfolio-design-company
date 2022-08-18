@@ -1,0 +1,122 @@
+@use "__config" as *;
+
+.services {
+   position: relative;
+   background-image: url("../img/services_bg.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+
+		&__wrapper {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+         gap: rem(30);
+         grid-auto-flow: dense;
+		}
+
+		&__head {
+         @include media ("<=phone") { 
+            padding-bottom: rem(30);
+         }
+         @include media (">tablet") { 
+           grid-column: 2;
+         }
+         @include media (">laptop") { 
+           grid-column: 3;
+         }
+		}
+
+      &__head-text {
+         padding: rem(20) 0 rem(25);
+         
+         @include media (">phone") { 
+            padding: rem(20) 0 rem(45);
+         }
+      }
+
+      &__btn {
+         background-color: var(--clr-primary-500);
+      }
+
+		&__card {
+         display: grid;
+         background-color: var(--clr-white);
+         border-radius: var(--border-radius);
+         padding: rem(35) rem(45);
+         gap: rem(20);
+         justify-items: center;
+         // min-width: rem(350);
+		}
+
+      &__card--gn {
+         background-color: var(--clr-primary-500);
+         color: var(--clr-white);
+      }
+
+      
+      
+		&__card-more {
+         position: relative;
+         justify-items: flex-start;
+         padding-top: rem(100);
+         grid-template-columns: 3fr 1fr;
+         border: none;
+         cursor: pointer;
+		}
+
+      &__card-more::before {
+         display: block;
+         position: absolute;
+         top: rem(35);
+         right: 10%;
+         content: "";
+         width: rem(169);
+         height: rem(100);
+         background-image: url(/files/svg_icons/wave.svg);
+         background-repeat: repeat space;
+         background-size: 2.625rem 1.3125rem;
+         transform: rotate(90deg);
+      }
+      
+      &__card-more &__info {
+         color: var(--clr-white);
+         text-align: left;
+         align-self: center;
+      }
+
+       &__card-more &__header {
+         grid-column: span 2;
+         
+      }
+
+      &__icon {
+         fill: var(--clr-primary-500);
+         width: rem(70);
+         aspect-ratio: 1;
+      }
+
+      &__header {
+         font-weight: var(--fw-bold);
+         font-size: var(--fs-32);
+         text-align: center;
+		}
+
+      &__counter {
+         font-size: var(--fs-35);
+         font-weight: var(--fw-bold);
+         grid-column: span 2;
+      }
+
+      &__info {
+         text-align: center;
+      }
+
+      &__btn-more {
+         background-color: var(--clr-primary-600);
+         width: rem(49);
+         aspect-ratio: 1;
+         justify-self: flex-end;
+      }
+
+     
+
+}

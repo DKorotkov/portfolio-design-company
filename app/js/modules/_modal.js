@@ -17,6 +17,7 @@
 
    focusTrap - требуется ли переходить табом только по модальному окну (default: false) не работает с collapseOnFocusOut = true 
    collapseOnFocusOut - требуется ли закрывать окно при потери фокуса (default: false)
+   matchMedia - медиа запрос, в котором должен запускаться новый класс (none)
 
    overlay - требуется ли оверлей (default: true)
    overlayBg - цвет bg (defult: "rgba(0,0,0, 0.5)")
@@ -56,14 +57,17 @@ class ModalDK extends NodaDK {
    #$activeOpenBtn; // Храним ноду кнопки, которой открыли, для перевода на нее фокусе, когд закроем окно
    constructor(options) {
       super(options);
-      this._options = Object.assign(this.#defaultOptions, this._options);
-      this._$openBtns = document.querySelectorAll(this._options.openBtnsSelector);
+      if (this.#check()) {
+         this._options = Object.assign(this.#defaultOptions, this._options);
+         this._$openBtns = document.querySelectorAll(this._options.openBtnsSelector);
 
-      this.#check();
-      this.#init();
+         this.#init();
+      }
    }
 
-   #check() {}
+   #check() {
+      return !this._hasErrors;
+   }
 
    #init() {
       this._$el.setAttribute("role", "dialog");

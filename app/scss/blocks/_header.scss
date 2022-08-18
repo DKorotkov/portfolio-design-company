@@ -44,6 +44,11 @@
       fill: var(--clr-white);
    }
 
+   &__btn:hover,
+   &__btn:focus-visible {
+      fill: var(--clr-primary);
+   }
+
    &__logo {
       color: var(--clr-primary);
       font-family: var(--ff-heading);

@@ -5,7 +5,8 @@
    fill: var(--clr-white);
   
 
-   &:hover {
+   &:hover,
+   &:focus-visible {
       fill: var(--clr-primary);
    }
 
