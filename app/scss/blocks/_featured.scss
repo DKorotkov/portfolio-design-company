@@ -1,0 +1,86 @@
+@use "__config" as *;
+
+.featured {
+   
+      @include media ("<=phone") { 
+         &__gallery-item:nth-child(4n+5) {
+            grid-column:  span 2;
+            // grid-row: span 2;
+         }
+      } 
+
+      @include media (">tablet") {
+
+      
+        &__gallery-item {
+         grid-column:  span 2;
+      }
+
+      &__gallery-item:nth-child(5n+1) {
+         grid-column:  span 5;
+         grid-row: span 2;
+      }
+
+      &__gallery-item:nth-child(5n + 4) {
+         grid-column:  span 4;
+      }
+
+      &__gallery-item:nth-child(5n + 5) {
+          grid-column:  span 3;
+      }
+
+      &__gallery-item:nth-child(10n + 6) {
+         grid-column: 3 /  span 5;
+      }
+      }
+
+   &__container {
+      position: relative;
+   }
+
+		&__head {
+         justify-content: space-between;
+         padding-bottom: rem(60);
+         @include media (">laptop") { 
+            display: flex;
+         }
+		}
+
+		&__btn {
+         background-color: var(--clr-primary-500);
+         @include media ("<=laptop") { 
+           margin-top: rem(30);
+         }
+		}
+
+		&__gallery {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         align-content: stretch;
+         gap: rem(15);
+         grid-auto-flow: dense;
+         @include media (">tablet") { 
+            gap: rem(30);
+            grid-template-columns: repeat(7, 1fr);
+         }
+		}
+
+		&__img {
+         border-radius: 1rem;
+         height: 100%;
+         @include media (">tablet") { 
+            border-radius: var(--border-radius);
+         }
+		}
+
+      &__rectangles {
+         top: 100%!important;
+         left: 5%;
+
+         @include media (">1980px") { 
+            top: 64%!important;
+            transform: translateX(-85%) ;
+         }
+      }
+
+}
