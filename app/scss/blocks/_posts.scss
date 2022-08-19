@@ -1,0 +1,105 @@
+@use "__config" as *;
+
+.posts {
+
+		&__header {
+         padding-bottom: em(60, 50);
+         text-align: center;
+		}
+
+		&__list {
+         display: flex;
+         flex-wrap: wrap;
+         gap: rem(15);
+         @include media (">phone") { 
+           gap: rem(30);
+         }
+		}
+}
+
+.post {
+   flex: rem(450) 1;
+   border-radius: var(--border-radius);
+   padding: rem(50) rem(40);
+
+   &:nth-child(even) {
+      --bg-color: rgba(0,0,0,.7);
+      background: linear-gradient(to right, var(--bg-color), var(--bg-color)),url("../img/group-coworkers-office-posing 1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: var(--clr-white);
+   }
+
+   &:nth-child(even) &__text {
+      color: var(--clr-white);
+   }
+
+		&__time {
+		}
+
+		&__header {
+         font-size: var(--fs-24);
+         font-weight: var(--fw-semi-bold);
+         padding-top: em(30,24);
+         padding-bottom: em(20,24);
+		}
+
+		&__text {
+		}
+
+		&__link {
+         --clr-post-link: var(--clr-primary-500);
+         --sz-arrow: 1px;
+         display: inline-block;
+        
+         position: relative;
+         color: var(--clr-post-link);
+         font-size: var(--fs-16);
+         margin-top: em(40, 16);
+         text-decoration: none;
+
+		}
+
+      &__link:hover,
+      &__link:focus-visible {
+         text-decoration: underline;
+      }
+
+      &__link::before {
+         position: absolute;
+         top: 49%;
+         left: 97%;
+         content: '';
+         width: rem(10);
+         height: var(--sz-arrow);
+         margin-left: rem(18);
+         background-color: var(--clr-post-link);
+         transform: translateY(rem(2));
+         transition: all .3s ease;
+        
+      }
+
+      &__link::after {
+         position: absolute;
+         top: 49%;
+         right: -30%;
+         content: '';
+         width: rem(5);
+         aspect-ratio: 1;
+         border-top: var(--sz-arrow) solid var(--clr-post-link);
+         border-right: var(--sz-arrow) solid var(--clr-post-link);
+         transform: rotate(45deg);
+         transition: all .3s ease;
+
+      }
+
+      &__link:hover::before,
+      &__link:focus-visible::before {
+         width: rem(15);
+      }
+
+      &__link:hover::after,
+      &__link:focus-visible::after {
+         right: calc((-1* rem(5)) - 30%);
+      }
+}
