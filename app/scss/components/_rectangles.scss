@@ -115,8 +115,47 @@
          right: rem(95);
       }
    }
-
 }
+
+.rectangles[data-type="third"] {
+   & .rectangle:nth-child(1) {
+      top:  rem(20);
+      right:  calc(-1 * rem(85));
+      @include media (">phone") { 
+         top:  rem(20);
+         right:  calc(-1 * rem(175));
+      }
+   }
+
+   & .rectangle:nth-child(2) {
+      // top:  rem(20);
+      right:  calc(-1 * rem(90));
+      @include media (">phone") { 
+         right:  calc(-1 * rem(190));
+      }
+      @include media (">1980px") { 
+         // top: calc(-1 * rem(70));
+         // // left: calc(-1 * rem(120));
+         // z-index: -1;
+      }
+   }
+
+   & .rectangle:nth-child(3) {
+      // left: calc(-1 * rem(40));
+      // right:  calc(-1 * rem(20));
+      top: rem(35);
+      @include media (">phone") { 
+         top: rem(60);
+      }
+      @include media (">1980px") { 
+         // top: rem(25);
+         // // left  : calc(-1 * rem(220));
+         // right: rem(95);
+      }
+   }
+}
+
+
 
 
  

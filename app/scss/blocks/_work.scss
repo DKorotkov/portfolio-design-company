@@ -1,0 +1,48 @@
+@use "__config" as *;
+
+.work {
+   position: relative;
+
+   &__section-header {
+      text-align: center;
+      padding-bottom: rem(60);
+   }
+
+		&__list {
+         display: flex;
+         flex-wrap: wrap;
+         gap: rem(30);
+		}
+
+		&__item {
+         counter-increment: my-counter;
+         flex-basis: rem(450);
+         flex-grow: 1;
+         border-radius: var(--border-radius);
+         background-color: var(--clr-white);
+         padding: rem(40) rem(110) rem(40) rem(40);
+		}
+
+      &__item::before {
+         content: "0" counter(my-counter);
+         font-size: var(--fs-65);
+         font-weight: var(--fw-semi-bold);
+        
+      }
+
+      &__item:nth-child(even) {
+         background-color: var(--clr-primary-500);
+         color: var(--clr-white);
+      }
+
+      &__item:nth-child(even) &__text {
+         color: var(--clr-white);
+      }
+
+      &__header {
+         font-size: var(--fs-32);
+         font-weight: var(--fw-semi-bold);
+         padding-bottom: em(24, 32);
+         padding-top: em(24, 32);
+      }
+}
