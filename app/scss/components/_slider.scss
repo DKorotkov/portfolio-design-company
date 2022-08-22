@@ -1,0 +1,111 @@
+@use "__config" as *;
+
+.slider {
+   display: flex;
+   position: relative;
+   gap: rem(20);
+}
+
+.slider > * {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.a11y-slider-autoplay {
+   display: none;
+}
+
+.a11y-slider-prev,
+.a11y-slider-next {
+   --pd: 1.25rem;
+   position: absolute;
+   top: 50%;
+   background: transparent;
+   border: none;
+   width: rem(50);
+   aspect-ratio: 1;
+   border-radius: rem(10);
+   background-color: var(--clr-bg-gn-400);
+   text-indent: -1000em;
+   transform: translateY(-50%);
+   transition: background-color .3s ease;
+   z-index: 10;
+   cursor: pointer;
+}
+
+.a11y-slider-prev {
+   left: var(--pd);
+}
+
+.a11y-slider-next {
+   right: var(--pd);
+}
+
+.a11y-slider-prev::before,
+.a11y-slider-next::before {
+   display: block; 
+   position: absolute;
+   top: 35%;
+   left: 30%;
+   content: '';
+   width: 30%;
+   aspect-ratio: 1;
+   border-top: rem(1) solid var(--clr-primary-500);
+   border-right: rem(1) solid var(--clr-primary-500);
+   transform: rotate(45deg);
+}
+
+.a11y-slider-prev::before {
+   left: 40%;
+   transform: rotate(-135deg);
+}
+
+.a11y-slider-prev:hover,
+.a11y-slider-prev:focus-visible,
+.a11y-slider-next:hover,
+.a11y-slider-next:focus-visible {
+   background-color: var(--clr-primary-500);
+}
+
+.a11y-slider-prev:hover::before,
+.a11y-slider-prev:focus-visible::before,
+.a11y-slider-next:hover::before,
+.a11y-slider-next:focus-visible::before {
+   border-top: rem(1) solid var(--clr-white);
+   border-right: rem(1) solid var(--clr-white);
+}
+
+.a11y-slider-dots {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.a11y-slider-dots li {
+    display: block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 6px;
+    color: var(--clr-primary-500);
+}
+
+.a11y-slider-dots li button.active, .a11y-slider-dots li button:focus, .a11y-slider-dots li button:hover {
+    background: var(--clr-primary);
+}
+
+.a11y-slider-dots li button {
+    display: block;
+    font-size: 0;
+    text-indent: -9999px;
+    border: 1px solid!important;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}

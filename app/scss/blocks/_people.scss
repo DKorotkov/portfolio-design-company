@@ -1,0 +1,96 @@
+@use "__config" as *;
+
+.people {
+   background-image: url("../img/people_bg.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+
+		&__header {
+         text-align: center;
+         padding-bottom: em(60, 50);
+		}
+
+		&__people-list {
+		}
+}
+
+.card {
+   --info-to-left: 1.875rem;
+   display: flex;
+   position: relative;
+   flex-direction: column;
+   justify-content: center;
+   @include media (">tablet") { 
+      width: 80%;
+      margin-inline: auto;
+      align-items: center;
+      flex-direction: row;
+   }
+
+		&__img {
+         
+         border-radius: var(--border-radius);
+         // max-height: rem(450);
+         margin-left: calc(var(--info-to-left) / 2);
+		}
+
+		&__info {
+         --padding-info: 4.0625rem;
+         display: grid;
+         position: relative;
+         left: calc(-1 * (var(--info-to-left)/2));
+         gap: rem(10);
+         border-radius: var(--border-radius);
+         padding: var(--padding-info);
+         background-color: var(--clr-white-08);
+         @include media ("<=tablet") {
+             --padding-info: 2.0625rem;
+            top: rem(-40);
+            left: auto; 
+            width: 90%;
+            margin-inline: auto;
+         }
+		}
+
+     &__icon-wrapper {
+      --width-icon: 5rem;
+      position: absolute;
+      top: calc(-1* var(--padding-info) + (var(--width-icon) /3));
+      left: var(--padding-info);
+      border-radius: 100%;
+      width: var(--width-icon);
+      aspect-ratio: 1;
+      background-color: var(--clr-primary-500);
+      fill: var(--clr-white);
+      padding: rem(25);
+      @include media ("<=1320px") { 
+         display: none;
+      }
+     }
+
+     &__icon {
+      aspect-ratio: 1;
+
+     }
+
+		&__text {
+         color: var(--clr-black);
+         font-weight: var(--fw-semi-bold);
+         padding-bottom: em(40,20);
+		}
+
+		&__stars {
+         --stars-amount: 5;
+         --start-width: calc(var(--stars-amount) * 1.25rem);
+         height: rem(20);
+         width: var(--start-width);
+         background-image: url("../files/svg_icons/star.svg");
+         background-repeat: space no-repeat;
+		}
+      
+		&__name {
+         // padding-top: em(35,19);
+         font-weight: var(--fw-semi-bold);
+         font-size: var(--fs-19);
+		}
+}

@@ -56,4 +56,17 @@
 
    // ------------------------------------------------------
 
+   const slider = new A11YSlider(document.querySelector(".slider"), {
+      autoplay: true,
+      autoplaySpeed: 2500,
+      arrows: false,
+      dots: true,
+      responsive: {
+         768: {
+            arrows: true,
+            dots: false
+         }
+      }
+});
+
 })();
