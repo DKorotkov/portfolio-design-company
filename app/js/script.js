@@ -42,11 +42,11 @@
    // ------------------------------------------------------
 
    // -----------Галерея------------------------------------
-//    g = new GalleryDK({
-//    selector: ".gallery", // селектор контейнера, который объединяет все изображения
-//    focusTrap: true,
-//    collapseOnFocusOut: false,
-// });
+   g = new GalleryDK({
+   selector: ".featured__gallery", // селектор контейнера, который объединяет все изображения
+   focusTrap: true,
+   collapseOnFocusOut: false,
+});
 
    // ------------------------------------------------------
 
@@ -99,7 +99,6 @@ digitAnimate();
 
 // ------------Анимация----------
 AOS.init({
-   anchorPlacement: 'center-bottom', 
 });
 
 document.addEventListener('aos:in', ({ detail }) => {
