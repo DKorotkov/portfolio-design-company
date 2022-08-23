@@ -34,7 +34,7 @@ global.gl = {
 };
 
 const dev = gulp.series(clean, html, scss, js, images, svg, copyFiles, gulp.parallel(watcher, server));
-const build = gulp.series(clean, html, scss, js, images, svg, copyFiles, ftp);
+const build = gulp.series(clean, html, scss, js, images, svg, copyFiles);
 
 gulp.task("default", dev);
 gulp.task("build", build);
