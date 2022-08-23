@@ -1,0 +1,20 @@
+@use "__config" as *;
+
+[data-aos="fade-left-custom"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+
+  @include media (">laptop") { 
+    transform: translateX(100px);
+
+    &.aos-animate {
+      transform: translateY(-50%) translateX(0);
+    }
+  
+  }
+
+  &.aos-animate {
+    opacity: 1;
+    
+  }
+}

@@ -2,7 +2,9 @@
 
 .interiors {
    position: relative;
-
+   @include media ("<=laptop") { 
+     padding-bottom: 0!important;
+   }
    &__container {
       position: relative;
    }
@@ -17,7 +19,6 @@
    &__info {
       position: relative;
       top: -10vh;
-      max-width: rem(670);
       background-color: var(--clr-bg-gray-300);
       border-radius: var(--border-radius);
       padding: rem(50);
@@ -26,13 +27,16 @@
 
       @include media (">laptop") { 
          position: absolute;
-         top: 50%;
+         top: 15%;
          // left: -20vw;
          right: 5%;
          width: 100%;
-         transform: translateY(-50%);
+         max-width: rem(670);
+
+         // transform: translateY(-50%);
       }
    }
+
 
    &__info-text {
       padding-top: rem(20);

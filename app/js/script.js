@@ -10,7 +10,7 @@
    // ------------------------------------------------------------------------------------
 
    // --------------------------------Загрузка класса Валидации форм----------------------
-   @@include('modules/_formValidation.js')
+   // @@include('modules/_formValidation.js')
    // ------------------------------------------------------------------------------------
 
    // --------------------------------Загрузка класса Событий "касаний"----------------------
@@ -30,12 +30,8 @@
    // ------------------------------------------------------------------------------------
 
    
-   // -----------Проверка валидация формы-------------------
-   FormValid.init();
-   // ------------------------------------------------------
-
    // -----------Модальное окно-----------------------------
-   m = new ModalDK({
+   const m = new ModalDK({
       selector: ".nav-main",
       openBtnsSelector: ['[data-name="navigation"]'],
       focusTrap: true, // Требуется ли перемещаться табом только внутри объекта (default: false)
@@ -54,6 +50,7 @@
 
    // ------------------------------------------------------
 
+   // ---------Слайдер----------------
    const slider = new A11YSlider(document.querySelector(".slider"), {
       autoplay: true,
       autoplaySpeed: 2500,
@@ -66,8 +63,50 @@
          }
       }
    });
+// ---------------------------------
 
+// -------Аккордион в футере------------------
 const accServices = new AccordionBtn(".accordion", true);
+// --------------------------------------------
+
+// -------Набор цифр-------------------
+const digitAnimate = () => {
+   const digits = document.querySelectorAll(".solutions__digits");
+   digits.forEach(digit => {
+      digit.innerText = digit.dataset.text ? "0" + digit.dataset.text : "0";
+
+      const target = +digit.dataset.target;
+      const increment = target / 20;
+      const updateCounter = () => {
+         let current = parseInt(digit.innerText);
+         if (current < target) {
+            current += increment;
+            current = Math.round(current);
+            digit.innerText = digit.dataset.text ? current + digit.dataset.text : current;
+            setTimeout(() => {
+               updateCounter()
+            }, 50);
+         }
+      };
+
+      updateCounter();  
+   });
+};
+
+digitAnimate();
+
+// --------------
+
+// ------------Анимация----------
+AOS.init({
+   anchorPlacement: 'center-bottom', 
+});
+
+document.addEventListener('aos:in', ({ detail }) => {
+  if (detail.classList.contains('solutions')) digitAnimate();
+});
+
+// -----------------------------
   
 
 })();
