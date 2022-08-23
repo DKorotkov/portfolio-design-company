@@ -47,7 +47,9 @@
 		}
 
 		&__btn {
+         display: inline-block;
          background-color: var(--clr-primary-500);
+         text-decoration: none;
          @include media ("<=laptop") { 
            margin-top: rem(30);
          }

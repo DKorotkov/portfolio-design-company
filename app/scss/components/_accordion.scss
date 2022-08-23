@@ -1,0 +1,57 @@
+@use "__config" as *;
+
+.accordion {
+
+   &__summary {
+      border: none;
+      background-color: transparent;
+      color: var(--clr-white);
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      @include media (">tablet") { 
+        cursor: default;
+        pointer-events: none;
+      }
+   }
+
+
+   &__list {
+      padding-top: rem(30);
+      @include media (">tablet") { 
+        display: grid;
+        gap: rem(15);
+      }
+   }
+
+    &__content {
+      opacity: 0;
+      max-height: 0;
+      will-change: max-height;
+      overflow: hidden;
+      transition: opacity, max-height  0.3s ease-out;
+      box-sizing: content-box;
+      @include media (">tablet") { 
+        opacity: 1;
+        max-height: none;
+      }
+   }
+
+   &__content[aria-hidden="false"]{
+      opacity: 1;
+   }
+
+   &__header {
+      font-weight: var(--fw-semi-bold);
+   }
+
+   &__item {
+      color: var(--clr-white);
+      text-decoration: none;
+   }
+
+   &__item:hover,
+   &__item:focus-visible {
+      text-decoration: underline;
+   }
+}
