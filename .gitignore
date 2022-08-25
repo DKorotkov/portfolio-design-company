@@ -1,2 +1,4 @@
+gulp
+gulpfile.js
+*.json
 node_modules
-html.code-workspace
